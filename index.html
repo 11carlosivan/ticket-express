@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Plataforma de Tickets</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <!-- Barra superior con buscador y opciones -->
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar...">
+    </div>
+    <div class="user-menu">
+      <div class="dropdown">
+        <button class="dropbtn">
+          <span class="arrow-down"></span>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Perfil</a>
+          <a href="#">Cerrar sesión</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Panel izquierdo con los filtros y tickets -->
+    <div class="sidebar">
+      <h2>Mis Tickets</h2>
+      <ul>
+        <li>Tickets creados</li>
+        <li>Tickets asignados a mí</li>
+        <li>Todos los tickets</li>
+      </ul>
+    </div>
+
+    <!-- Panel central con el contenido del ticket seleccionado -->
+    <div class="content">
+      <h2>Tickets</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Número de Ticket</th>
+            <th>Asignado a</th>
+            <th>Estatus</th>
+            <th>Fecha de Creación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>John Doe</td>
+            <td>En progreso</td>
+            <td>2023-06-20</td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Jane Smith</td>
+            <td>Pendiente</td>
+            <td>2023-06-19</td>
+          </tr>
+          <!-- Agrega más filas según sea necesario -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Icono flotante para crear un nuevo ticket -->
+    <div class="floating-button">
+      <button id="add-ticket-button">+</button>
+    </div>
+  </div>
+
+  <!-- Popup para crear un nuevo ticket -->
+  <div class="popup">
+    <span class="popup-close-button" onclick="closePopup()">X</span>
+    <h2>Crear Nuevo Ticket</h2>
+    <form action="create_ticket.php" method="post">
+      <label for="analista">Analista:</label>
+      <input type="text" id="analista" name="analista" required>
+
+      <label for="solicitud">Solicitud:</label>
+      <input type="text" id="solicitud" name="solicitud" required>
+
+      <label for="tipo-solicitud">Tipo de Solicitud:</label>
+      <input type="text" id="tipo-solicitud" name="tipo_solicitud" required>
+
+      <label for="comentario">Comentario:</label>
+      <textarea id="comentario" name="comentario" required></textarea>
+
+      <input type="submit" value="Guardar Ticket">
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
